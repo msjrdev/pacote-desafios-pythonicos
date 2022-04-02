@@ -19,6 +19,7 @@ def not_bad(s):
 
     return txt
 
+
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
 def test(f, in_, expected):
