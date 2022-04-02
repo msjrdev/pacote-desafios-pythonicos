@@ -11,8 +11,24 @@ Finalmente, dadas duas strings a e b, retorne uma string na forma:
 a-frente + b-frente + a-trás + b-trás
 """
 def front_back(a, b):
-    # +++ SUA SOLUÇÃO +++
-    return
+    if (len(a)%2) == 0:
+        am = int(len(a)/2)
+    else:
+        am = (int(len(a)/2) + 1)
+
+    af = a[:am]
+    at = a[am:]
+
+    if (len(b)%2) == 0:
+        bm = int(len(b)/2)
+    else:
+        bm = (int(len(b)/2) + 1)
+
+    bf = b[:bm]
+    bt = b[bm:]
+
+
+    return (af + bf + at + bt)
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
