@@ -10,8 +10,9 @@ A sua solução deve rodar em tempo linear, ou seja, deve fazer uma
 """
 
 def linear_merge(list1, list2):
-    # +++ SUA SOLUÇÃO +++
-    return
+    new_list = list1 + list2
+    new_list.sort()
+    return new_list
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
