@@ -53,10 +53,45 @@ e conferindo cada etapa do seu progresso.
 
 import sys
 
-
 # +++ SUA SOLUÇÃO +++
+def get_word_list(filename):
+    with open(filename) as file:
+        words_list = file.read().lower().split()
+    return words_list
+
+
+def get_freq_dict(words_list):
+    words_dict = {}
+    for word in words_list:
+        if word in words_dict:
+            words_dict[word] += 1
+        else:
+            words_dict[word] = 1
+    return words_dict
+
+
 # Defina as funções print_words(filename) e print_top(filename).
 
+def print_words(filename):
+    words_list = get_word_list(filename)
+    words_dict = get_freq_dict(words_list)
+
+
+    for word, freq in sorted(words_dict.items()):
+        print(word, freq)
+
+
+def print_top(filename):
+    words_list = get_word_list(filename)
+    words_dict = get_freq_dict(words_list)
+
+    top_dict = {}
+    for word, freq in words_dict.items():
+        top_dict[freq] = word
+
+    top_list = list(sorted(top_dict.items(), reverse=True))[:20]
+    for element in top_list:
+        print(f'{element[1]} {element[0]}')
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
 # parêtros do programa.
